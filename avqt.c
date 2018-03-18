@@ -18,3 +18,15 @@ int main()
     	printf("\nSorry! you can only login between 10AM to 12PM\n");
     	exit(0);
     }
+	printf("------------------------------WELCOME------------------------------------\n");
+	printf("Enter the Total No of Processes u want: ");
+	scanf("%d", &no_of_processes);
+	for (i = 0; i < no_of_processes; i++) {
+		process[i] = i;
+		printf("Please Enter the Burst Time of the Process %d : ", i);
+		scanf("%d", &burst_time[i]);
+		printf("Press 0 for student queue and 1 for Faculty queue: ");
+		scanf("%d", &queue_type[i]);
+	}
+
+	system("cls");
