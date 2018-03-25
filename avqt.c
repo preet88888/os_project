@@ -30,3 +30,19 @@ int main()
 	}
 
 	system("cls");
+
+	printf("\n\nThese are Student Processes\n");
+	printf("\nPROCESS NO\tBURST TIME");
+	for (i = 0; i < no_of_processes; i++) {
+		if (queue_type[i] == 0) {
+			printf("\n%d \t\t %d ", process[i], burst_time[i]);
+		}
+	}
+
+	printf("\n\nThese are Faculty Processes\n");
+	printf("\nPROCESS NO\tBURST TIME");
+	for (i = 0; i < no_of_processes; i++) {
+		if (queue_type[i] == 1) {
+			printf("\n%d \t\t %d ", process[i], burst_time[i]);
+		}
+	}
