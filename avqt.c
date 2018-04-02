@@ -46,3 +46,22 @@ int main()
 			printf("\n%d \t\t %d ", process[i], burst_time[i]);
 		}
 	}
+	printf("\n\nPress enter to view result");
+	getchar();
+	getchar();
+	system("cls");
+
+	for (i = 0; i < no_of_processes; i++)
+		for (k = i + 1; k < no_of_processes; k++)
+			if (queue_type[i] > queue_type[k]) {
+				temp = process[i];
+				process[i] = process[k];
+				process[k] = temp;
+				temp = burst_time[i];
+				burst_time[i] = burst_time[k];
+				burst_time[k] = temp;
+				temp = queue_type[i];
+				queue_type[i] = queue_type[k];
+				queue_type[k] = temp;
+			}
+
