@@ -65,3 +65,18 @@ int main()
 				queue_type[k] = temp;
 			}
 
+	waiting_avg = waiting_time[0] = 0;
+	turnaround_avg = turnaround_time[0] = burst_time[0];
+	for (i = 1; i < no_of_processes; i++) {
+		waiting_time[i] = waiting_time[i - 1] + burst_time[i - 1];
+		turnaround_time[i] = turnaround_time[i - 1] + burst_time[i];
+		waiting_avg = waiting_avg + waiting_time[i];
+		turnaround_avg = turnaround_avg + turnaround_time[i];
+	}
+	printf("\nPROCESS NO\t Student/Faculty \tBURST TIME\tWAITING TIME\tTURNAROUND TIME");
+	for (i = 0; i < no_of_processes; i++)
+		printf("\n%d \t\t %d \t\t\t %d \t\t %d \t\t %d ", process[i], queue_type[i], burst_time[i], waiting_time[i], turnaround_time[i]);
+	printf("\n\nAverage Waiting Time is : %f", waiting_avg / no_of_processes);
+	printf("\n\nAverage Turnaround Time is : %f", turnaround_avg / no_of_processes);
+}
+
